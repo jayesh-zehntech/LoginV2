@@ -1,0 +1,545 @@
+<html>
+
+<head>
+    <title>Login | Registration Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <haader class="stickIt">
+        <div class="nav">
+            <div class="imgDiv"><img src="img/zehntech-hz-white.png"></div>
+            <div class="menus">
+                <ul>
+                    <li>Services</li>
+                    <li>About Us</li>
+                    <li>Sucess Stories</li>
+                    <li>Insights</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <button class="loginBtn">Login</button>
+        </div>
+    </haader>
+    <div class="overlayDiv"></div>
+    <div class="loginModal">
+        <div class="loginFormEff">
+            <form>
+                <h1>Login Form</h1>
+                <input class="lip1" style=" margin-top: 100px;" type="text" placeholder="Username" id="loginOneSel" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter username</p>
+                <input class="lip2" style="margin-top: 20px;" type="password" placeholder="Password" id="loginOneSel" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter password</p>
+                <!-- <p class="fp">Forgot password?</p> -->
+                <button style="margin-top: 60px;" class="loginEff lbtn">Login</button>
+                <p style="text-align: center; margin: 10px;">Not a member? <span class="fp">Signup now</span></p>
+            </form>
+
+        </div>
+        <div class="signFormEff">
+            <form>
+                <h1>Signup Form</h1>
+                <input class="sip1" style="margin-top: 70px;" type="text" placeholder="Username" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter username</p>
+
+                <input class="sip2" style="margin-top: 20px;" type="text" placeholder="Email Address" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter email address
+                </p>
+
+                <input class="sip3" style="margin-top: 20px;" type="password" placeholder="Password" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter password</p>
+
+                <input class="sip4" style="margin-top: 20px;" type="password" placeholder="Confirm password" />
+                <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter confirm
+                    password</p>
+
+                <button style="margin-top: 20px;" class="loginEff sbtn">Signup</button>
+
+            </form>
+
+        </div>
+        <div class="innerLoginModal">
+            <!-- <div class="btnCnt">
+                    <button>
+                        <div class="innerBtn"></div>
+
+                    </button>
+                    <button></button>
+                </div>
+                <div class="btnCntLayered">
+                    <button>Login
+
+                    </button>
+                    <button>Signup</button>
+                </div>
+
+                 -->
+
+            <div class="outer0">
+                <div class="outer1 positionO1">
+                    <button>
+                        <div class="btnEff"></div>
+                    </button>
+                    <button></button>
+                </div>
+                <div class="outer1 upperLayer">
+                    <button class="formLogin">Login</button>
+                    <button class="signBtn" style="color: black;">Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="check" style="display: none;">check</button>
+    <div class="loginSuccess">
+        <p>Welcome, Login Successful</p>
+        <div class="greenLine"></div>
+    </div>
+
+    <button id="check2" style="display: none;">check2</button>
+    <div class="singupSuccess">
+        <p>Welcome, Signup Successful</p>
+        <div class="blueLine"></div>
+    </div>
+
+    <div class="scrollDiv" style=></div>
+</body>
+<script>
+    var loginBtn = document.querySelector('.loginBtn');
+    var loginModal = document.querySelector('.loginModal');
+    var overlayDiv = document.querySelector('.overlayDiv');
+
+    loginBtn.addEventListener('click', () => {
+        // console.log('clicked');
+        // overlayDiv.style.display = "block";
+        overlayDiv.style.opacity = "1";
+        overlayDiv.style.visibility = "visible";
+
+        loginModal.style.transform = "translate(-50%,-40%) scale(1)";
+
+    });
+    overlayDiv.addEventListener("click", () => {
+        // overlayDiv.style.display = "none";
+        overlayDiv.style.opacity = "0";
+        overlayDiv.style.visibility = "hidden";
+
+        loginModal.style.transform = "translate(-50%,-40%) scale(0)";
+    });
+
+    var btnEff = document.querySelector('.btnEff');
+    var formLogin = document.querySelector('.formLogin');
+    var signBtn = document.querySelector('.signBtn');
+    var signBtnTxt = document.querySelector('.fp');
+    var loginFormEff = document.querySelector('.loginFormEff');
+    var signFormEff = document.querySelector('.signFormEff');
+
+
+
+    formLogin.addEventListener('click', () => {
+        btnEff.style.left = "0%";
+        signBtn.style.color = "black";
+        formLogin.style.color = "white";
+        loginFormEff.style.left = "0%";
+        signFormEff.style.left = "100%";
+
+
+    });
+    signBtn.addEventListener('click', () => {
+        btnEff.style.left = "50%";
+        signBtn.style.color = "white";
+        formLogin.style.color = "black";
+        loginFormEff.style.left = "-100%";
+        signFormEff.style.left = "0%";
+
+    });
+    signBtnTxt.addEventListener('click', () => {
+        btnEff.style.left = "50%";
+        signBtn.style.color = "white";
+        formLogin.style.color = "black";
+        loginFormEff.style.left = "-100%";
+        signFormEff.style.left = "0%";
+
+    });
+
+    var sip1 = document.querySelector('.sip1');
+    var sip2 = document.querySelector('.sip2');
+    var sip3 = document.querySelector('.sip3');
+    var sip4 = document.querySelector('.sip4');
+    var sbtn = document.querySelector('.sbtn');
+
+    // console.log(sip1);
+    // console.log(sip2);
+    // console.log(sip3);
+    // console.log(sip4);
+    let isSignUpValid1 = false;
+    let isSignUpValid2 = false;
+    let isSignUpValid3 = false;
+    // let isSignUpValid4 = false;
+
+    
+    
+
+    // sbtn.addEventListener('click', () => {
+    //     if (sip1.value == "") {
+    //         $(".sip1").attr("id", "errorBorder");
+    //         $(".sip1").next().show();
+    //         event.preventDefault();
+    //     } else if (sip1.value.length < 3) {
+    //         $(".sip1").attr("id", "errorBorder");
+    //         $(".sip1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
+    //         $(".sip1").next().show();
+    //         event.preventDefault();
+    //     } else {
+    //         $(".sip1").attr("id", "zero");
+    //         $(".sip1").next().hide();
+    //         isSignUpValid1 = true;
+    //         console.log('inside if3');
+
+    //     }
+
+
+
+    //     if (sip2.value == "") {
+    //         $(".sip2").attr("id", "errorBorder");
+    //         $(".sip2").next().show();
+    //         event.preventDefault();
+    //     } else {
+    //         function isValidEmail(email) {
+    //             var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //             return emailPattern.test(email);
+    //         }
+    //         if (isValidEmail(sip2.value)) {
+    //             // console.log("VAlid email");
+    //             $(".sip2").attr("id", "zero");
+    //             $(".sip2").next().hide();
+    //             console.log('inside if1');
+    //             isSignUpValid2 = true;
+
+
+    //         } else {
+    //             // console.log("invalid email");
+    //             $(".sip2").attr("id", "errorBorder");
+    //             $(".sip2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address');
+    //             $(".sip2").next().show();
+    //             event.preventDefault();
+
+    //         }
+    //     }
+
+    //     if (sip3.value == "") {
+    //         $(".sip3").attr("id", "errorBorder");
+    //         $(".sip3").next().show();
+    //         event.preventDefault();
+    //     } else if (sip3.value.length < 6) {
+    //         $(".sip3").attr("id", "errorBorder");
+    //         $(".sip3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".sip3").next().show();
+    //         event.preventDefault();
+    //     } else {
+    //         function checkPasswordStrength(password) {
+    //             if (password.length < 6) {
+    //                 return "Password must be at least 6 characters long.";
+    //             }
+    //             if (!/[a-z]/.test(password)) {
+    //                 return "Password must include at least one lowercase letter.";
+    //             }
+    //             if (!/[A-Z]/.test(password)) {
+    //                 return "Password must include at least one uppercase letter.";
+    //             }
+    //             if (!/\d/.test(password)) {
+    //                 return "Password must include at least one digit.";
+    //             }
+    //             if (!/[@$!%*?&]/.test(password)) {
+    //                 return "Password must include at least one special character.";
+    //             }
+    //             return "Strong password!";
+    //         }
+
+    //         var paswdStatus = checkPasswordStrength(sip3.value);
+
+
+    //         if (paswdStatus != "Strong password!") {
+    //             $(".sip3").attr("id", "errorBorder");
+    //             $(".sip3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;'+paswdStatus);
+    //             $(".sip3").next().show();
+    //             event.preventDefault();
+    //         } else {
+    //             $(".sip3").attr("id", "zero");
+    //             $(".sip3").next().hide();
+    //             isSignUpValid3 = true;
+    //             console.log('inside if2');
+
+    //         }
+    //     }
+
+    //     if (sip4.value == "") {
+    //         $(".sip4").attr("id", "errorBorder");
+    //         $(".sip4").next().show();
+    //         event.preventDefault();
+    //     } else if (sip4.value.length < 6) {
+    //         $(".sip4").attr("id", "errorBorder");
+    //         $(".sip4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".sip4").next().show();
+    //         event.preventDefault();
+    //     } else if (sip3.value != sip4.value) {
+    //         $(".sip4").attr("id", "errorBorder");
+    //         $(".sip4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match');
+    //         $(".sip4").next().show();
+    //         event.preventDefault();
+
+    //     }
+    //     else {
+    //         $(".sip4").attr("id", "zero");
+    //         $(".sip4").next().hide();
+            
+
+    //         if(isSignUpValid1 && isSignUpValid2 && isSignUpValid3){
+    //             console.log('inside if4');
+    //             $("#check2").trigger("click");
+    //         }
+    //         event.preventDefault();
+
+
+    //     }
+    // });
+    sbtn.addEventListener('click', function(event) {
+    let isSignUpValid1 = false;
+    let isSignUpValid2 = false;
+    let isSignUpValid3 = false;
+
+    // Check Username (sip1)
+    if (sip1.value === "") {
+        sip1.setAttribute("id", "errorBorder");
+        sip1.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else if (sip1.value.length < 3) {
+        sip1.setAttribute("id", "errorBorder");
+        sip1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
+        sip1.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else {
+        sip1.setAttribute("id", "zero");
+        sip1.nextElementSibling.style.display = "none";
+        isSignUpValid1 = true;
+        console.log('inside if3');
+    }
+
+    // Check Email (sip2)
+    if (sip2.value === "") {
+        sip2.setAttribute("id", "errorBorder");
+        sip2.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else {
+        function isValidEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+        if (isValidEmail(sip2.value)) {
+            sip2.setAttribute("id", "zero");
+            sip2.nextElementSibling.style.display = "none";
+            console.log('inside if1');
+            isSignUpValid2 = true;
+        } else {
+            sip2.setAttribute("id", "errorBorder");
+            sip2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address';
+            sip2.nextElementSibling.style.display = "block";
+            event.preventDefault();
+        }
+    }
+
+    // Check Password (sip3)
+    if (sip3.value === "") {
+        sip3.setAttribute("id", "errorBorder");
+        sip3.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else if (sip3.value.length < 6) {
+        sip3.setAttribute("id", "errorBorder");
+        sip3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        sip3.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else {
+        function checkPasswordStrength(password) {
+            if (password.length < 6) {
+                return "Password must be at least 6 characters long.";
+            }
+            if (!/[a-z]/.test(password)) {
+                return "Password must include at least one lowercase letter.";
+            }
+            if (!/[A-Z]/.test(password)) {
+                return "Password must include at least one uppercase letter.";
+            }
+            if (!/\d/.test(password)) {
+                return "Password must include at least one digit.";
+            }
+            if (!/[@$!%*?&]/.test(password)) {
+                return "Password must include at least one special character.";
+            }
+            return "Strong password!";
+        }
+
+        var paswdStatus = checkPasswordStrength(sip3.value);
+
+        if (paswdStatus !== "Strong password!") {
+            sip3.setAttribute("id", "errorBorder");
+            sip3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;' + paswdStatus;
+            sip3.nextElementSibling.style.display = "block";
+            event.preventDefault();
+        } else {
+            sip3.setAttribute("id", "zero");
+            sip3.nextElementSibling.style.display = "none";
+            isSignUpValid3 = true;
+            console.log('inside if2');
+        }
+    }
+
+    // Check Confirm Password (sip4)
+    if (sip4.value === "") {
+        sip4.setAttribute("id", "errorBorder");
+        sip4.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else if (sip4.value.length < 6) {
+        sip4.setAttribute("id", "errorBorder");
+        sip4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        sip4.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else if (sip3.value !== sip4.value) {
+        sip4.setAttribute("id", "errorBorder");
+        sip4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match';
+        sip4.nextElementSibling.style.display = "block";
+        event.preventDefault();
+    } else {
+        sip4.setAttribute("id", "zero");
+        sip4.nextElementSibling.style.display = "none";
+
+        if (isSignUpValid1 && isSignUpValid2 && isSignUpValid3) {
+            console.log('inside if4');
+            document.querySelector("#check2").click(); // Trigger the click event
+        }
+        event.preventDefault();
+    }
+});
+
+    var lip1 = document.querySelector('.lip1');
+    var lip2 = document.querySelector('.lip2');
+    var lbtn = document.querySelector('.lbtn');
+
+    // console.log(sip1);
+    // console.log(sip2);
+    // console.log(sip3);
+    // console.log(sip4);
+    let isValid = true;
+
+
+    // lbtn.addEventListener('click', () => {
+    //     if (lip1.value == "") {
+    //         $(".lip1").attr("id", "errorBorder");
+    //         $(".lip1").next().show();
+    //         isValid = false;
+    //         event.preventDefault();
+    //     } else if (lip1.value.length < 3) {
+    //         $(".lip1").attr("id", "errorBorder");
+    //         $(".lip1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
+    //         $(".lip1").next().show();
+    //         isValid = false;
+    //         event.preventDefault();
+    //     } else {
+    //         $(".lip1").attr("id", "zero");
+    //         $(".lip1").next().hide();
+    //         isValid = true;
+    //     }
+
+    //     if (lip2.value == "") {
+    //         $(".lip2").attr("id", "errorBorder");
+    //         $(".lip2").next().show();
+    //         event.preventDefault();
+    //     } else if (lip2.value.length < 6) {
+    //         $(".lip2").attr("id", "errorBorder");
+    //         $(".lip2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".lip2").next().show();
+    //         event.preventDefault();
+    //     } else {
+    //         $(".lip2").attr("id", "zero");
+    //         $(".lip2").next().hide();
+
+    //         if (isValid) {
+    //             $("#check").trigger("click");
+    //         }
+    //         event.preventDefault();
+    //     }
+    // });
+
+    lbtn.addEventListener('click', function(event) {
+    let isValid = true;
+
+    // Check Username (lip1)
+    if (lip1.value === "") {
+        lip1.setAttribute("id", "errorBorder");
+        lip1.nextElementSibling.style.display = "block";
+        isValid = false;
+        event.preventDefault();
+    } else if (lip1.value.length < 3) {
+        lip1.setAttribute("id", "errorBorder");
+        lip1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
+        lip1.nextElementSibling.style.display = "block";
+        isValid = false;
+        event.preventDefault();
+    } else {
+        lip1.setAttribute("id", "zero");
+        lip1.nextElementSibling.style.display = "none";
+        isValid = true;
+    }
+
+    // Check Password (lip2)
+    if (lip2.value === "") {
+        lip2.setAttribute("id", "errorBorder");
+        lip2.nextElementSibling.style.display = "block";
+        isValid = false;
+        event.preventDefault();
+    } else if (lip2.value.length < 6) {
+        lip2.setAttribute("id", "errorBorder");
+        lip2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        lip2.nextElementSibling.style.display = "block";
+        isValid = false;
+        event.preventDefault();
+    } else {
+        lip2.setAttribute("id", "zero");
+        lip2.nextElementSibling.style.display = "none";
+
+        if (isValid) {
+            document.querySelector("#check").click();
+        }
+        event.preventDefault();
+    }
+});
+
+    $("#check").click(function () {
+        $(".loginSuccess").show();
+        $(".greenLine").animate({
+            right: "100%"
+        }, 2000, function () {
+            $(".loginSuccess").hide();
+            $(".greenLine").css("right", "0%");
+        });
+    });
+
+    $("#check2").click(function () {
+        $(".singupSuccess").show();
+        $(".blueLine").animate({
+            right: "100%"
+        }, 2000, function () {
+            $(".singupSuccess").hide();
+            $(".blueLine").css("right", "0%");
+        });
+    });
+
+
+
+
+</script>
+
+</html>
