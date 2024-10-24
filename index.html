@@ -32,9 +32,9 @@
         <div class="loginFormEff">
             <form>
                 <h1>Login Form</h1>
-                <input class="lip1" style=" margin-top: 100px;" type="text" placeholder="Username" id="loginOneSel" />
+                <input class="loginInput1" style=" margin-top: 100px;" type="text" placeholder="Username" id="loginOneSel" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter username</p>
-                <input class="lip2" style="margin-top: 20px;" type="password" placeholder="Password" id="loginOneSel" />
+                <input class="loginInput2" style="margin-top: 20px;" type="password" placeholder="Password" id="loginOneSel" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter password</p>
                 <!-- <p class="fp">Forgot password?</p> -->
                 <button style="margin-top: 60px;" class="loginEff lbtn">Login</button>
@@ -45,17 +45,17 @@
         <div class="signFormEff">
             <form>
                 <h1>Signup Form</h1>
-                <input class="sip1" style="margin-top: 70px;" type="text" placeholder="Username" />
+                <input class="signInInput1" style="margin-top: 70px;" type="text" placeholder="Username" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter username</p>
 
-                <input class="sip2" style="margin-top: 20px;" type="text" placeholder="Email Address" />
+                <input class="signInInput2" style="margin-top: 20px;" type="text" placeholder="Email Address" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter email address
                 </p>
 
-                <input class="sip3" style="margin-top: 20px;" type="password" placeholder="Password" />
+                <input class="signInInput3" style="margin-top: 20px;" type="password" placeholder="Password" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter password</p>
 
-                <input class="sip4" style="margin-top: 20px;" type="password" placeholder="Confirm password" />
+                <input class="signInInput4" style="margin-top: 20px;" type="password" placeholder="Confirm password" />
                 <p id="mesgError"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Please enter confirm
                     password</p>
 
@@ -95,13 +95,13 @@
             </div>
         </div>
     </div>
-    <button id="check" style="display: none;">check</button>
+    <button id="toastBtn" style="display: none;">toastBtn</button>
     <div class="loginSuccess">
         <p>Welcome, Login Successful</p>
         <div class="greenLine"></div>
     </div>
 
-    <button id="check2" style="display: none;">check2</button>
+    <button id="toastBtn2" style="display: none;">toastBtn2</button>
     <div class="singupSuccess">
         <p>Welcome, Signup Successful</p>
         <div class="blueLine"></div>
@@ -166,16 +166,16 @@
 
     });
 
-    var sip1 = document.querySelector('.sip1');
-    var sip2 = document.querySelector('.sip2');
-    var sip3 = document.querySelector('.sip3');
-    var sip4 = document.querySelector('.sip4');
+    var signInInput1 = document.querySelector('.signInInput1');
+    var signInInput2 = document.querySelector('.signInInput2');
+    var signInInput3 = document.querySelector('.signInInput3');
+    var signInInput4 = document.querySelector('.signInInput4');
     var sbtn = document.querySelector('.sbtn');
 
-    // console.log(sip1);
-    // console.log(sip2);
-    // console.log(sip3);
-    // console.log(sip4);
+    // console.log(signInInput1);
+    // console.log(signInInput2);
+    // console.log(signInInput3);
+    // console.log(signInInput4);
     let isSignUpValid1 = false;
     let isSignUpValid2 = false;
     let isSignUpValid3 = false;
@@ -185,18 +185,18 @@
     
 
     // sbtn.addEventListener('click', () => {
-    //     if (sip1.value == "") {
-    //         $(".sip1").attr("id", "errorBorder");
-    //         $(".sip1").next().show();
+    //     if (signInInput1.value == "") {
+    //         $(".signInInput1").attr("id", "errorBorder");
+    //         $(".signInInput1").next().show();
     //         event.preventDefault();
-    //     } else if (sip1.value.length < 3) {
-    //         $(".sip1").attr("id", "errorBorder");
-    //         $(".sip1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
-    //         $(".sip1").next().show();
+    //     } else if (signInInput1.value.length < 3) {
+    //         $(".signInInput1").attr("id", "errorBorder");
+    //         $(".signInInput1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
+    //         $(".signInInput1").next().show();
     //         event.preventDefault();
     //     } else {
-    //         $(".sip1").attr("id", "zero");
-    //         $(".sip1").next().hide();
+    //         $(".signInInput1").attr("id", "zero");
+    //         $(".signInInput1").next().hide();
     //         isSignUpValid1 = true;
     //         console.log('inside if3');
 
@@ -204,44 +204,44 @@
 
 
 
-    //     if (sip2.value == "") {
-    //         $(".sip2").attr("id", "errorBorder");
-    //         $(".sip2").next().show();
+    //     if (signInInput2.value == "") {
+    //         $(".signInInput2").attr("id", "errorBorder");
+    //         $(".signInInput2").next().show();
     //         event.preventDefault();
     //     } else {
     //         function isValidEmail(email) {
     //             var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     //             return emailPattern.test(email);
     //         }
-    //         if (isValidEmail(sip2.value)) {
+    //         if (isValidEmail(signInInput2.value)) {
     //             // console.log("VAlid email");
-    //             $(".sip2").attr("id", "zero");
-    //             $(".sip2").next().hide();
+    //             $(".signInInput2").attr("id", "zero");
+    //             $(".signInInput2").next().hide();
     //             console.log('inside if1');
     //             isSignUpValid2 = true;
 
 
     //         } else {
     //             // console.log("invalid email");
-    //             $(".sip2").attr("id", "errorBorder");
-    //             $(".sip2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address');
-    //             $(".sip2").next().show();
+    //             $(".signInInput2").attr("id", "errorBorder");
+    //             $(".signInInput2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address');
+    //             $(".signInInput2").next().show();
     //             event.preventDefault();
 
     //         }
     //     }
 
-    //     if (sip3.value == "") {
-    //         $(".sip3").attr("id", "errorBorder");
-    //         $(".sip3").next().show();
+    //     if (signInInput3.value == "") {
+    //         $(".signInInput3").attr("id", "errorBorder");
+    //         $(".signInInput3").next().show();
     //         event.preventDefault();
-    //     } else if (sip3.value.length < 6) {
-    //         $(".sip3").attr("id", "errorBorder");
-    //         $(".sip3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
-    //         $(".sip3").next().show();
+    //     } else if (signInInput3.value.length < 6) {
+    //         $(".signInInput3").attr("id", "errorBorder");
+    //         $(".signInInput3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".signInInput3").next().show();
     //         event.preventDefault();
     //     } else {
-    //         function checkPasswordStrength(password) {
+    //         function toastBtnPasswordStrength(password) {
     //             if (password.length < 6) {
     //                 return "Password must be at least 6 characters long.";
     //             }
@@ -260,47 +260,47 @@
     //             return "Strong password!";
     //         }
 
-    //         var paswdStatus = checkPasswordStrength(sip3.value);
+    //         var paswdStatus = toastBtnPasswordStrength(signInInput3.value);
 
 
     //         if (paswdStatus != "Strong password!") {
-    //             $(".sip3").attr("id", "errorBorder");
-    //             $(".sip3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;'+paswdStatus);
-    //             $(".sip3").next().show();
+    //             $(".signInInput3").attr("id", "errorBorder");
+    //             $(".signInInput3").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;'+paswdStatus);
+    //             $(".signInInput3").next().show();
     //             event.preventDefault();
     //         } else {
-    //             $(".sip3").attr("id", "zero");
-    //             $(".sip3").next().hide();
+    //             $(".signInInput3").attr("id", "zero");
+    //             $(".signInInput3").next().hide();
     //             isSignUpValid3 = true;
     //             console.log('inside if2');
 
     //         }
     //     }
 
-    //     if (sip4.value == "") {
-    //         $(".sip4").attr("id", "errorBorder");
-    //         $(".sip4").next().show();
+    //     if (signInInput4.value == "") {
+    //         $(".signInInput4").attr("id", "errorBorder");
+    //         $(".signInInput4").next().show();
     //         event.preventDefault();
-    //     } else if (sip4.value.length < 6) {
-    //         $(".sip4").attr("id", "errorBorder");
-    //         $(".sip4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
-    //         $(".sip4").next().show();
+    //     } else if (signInInput4.value.length < 6) {
+    //         $(".signInInput4").attr("id", "errorBorder");
+    //         $(".signInInput4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".signInInput4").next().show();
     //         event.preventDefault();
-    //     } else if (sip3.value != sip4.value) {
-    //         $(".sip4").attr("id", "errorBorder");
-    //         $(".sip4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match');
-    //         $(".sip4").next().show();
+    //     } else if (signInInput3.value != signInInput4.value) {
+    //         $(".signInInput4").attr("id", "errorBorder");
+    //         $(".signInInput4").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match');
+    //         $(".signInInput4").next().show();
     //         event.preventDefault();
 
     //     }
     //     else {
-    //         $(".sip4").attr("id", "zero");
-    //         $(".sip4").next().hide();
+    //         $(".signInInput4").attr("id", "zero");
+    //         $(".signInInput4").next().hide();
             
 
     //         if(isSignUpValid1 && isSignUpValid2 && isSignUpValid3){
     //             console.log('inside if4');
-    //             $("#check2").trigger("click");
+    //             $("#toastBtn2").trigger("click");
     //         }
     //         event.preventDefault();
 
@@ -312,58 +312,58 @@
     let isSignUpValid2 = false;
     let isSignUpValid3 = false;
 
-    // Check Username (sip1)
-    if (sip1.value === "") {
-        sip1.setAttribute("id", "errorBorder");
-        sip1.nextElementSibling.style.display = "block";
+    // toastBtn Username (signInInput1)
+    if (signInInput1.value === "") {
+        signInInput1.setAttribute("id", "errorBorder");
+        signInInput1.nextElementSibling.style.display = "block";
         event.preventDefault();
-    } else if (sip1.value.length < 3) {
-        sip1.setAttribute("id", "errorBorder");
-        sip1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
-        sip1.nextElementSibling.style.display = "block";
+    } else if (signInInput1.value.length < 3) {
+        signInInput1.setAttribute("id", "errorBorder");
+        signInInput1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
+        signInInput1.nextElementSibling.style.display = "block";
         event.preventDefault();
     } else {
-        sip1.setAttribute("id", "zero");
-        sip1.nextElementSibling.style.display = "none";
+        signInInput1.setAttribute("id", "zero");
+        signInInput1.nextElementSibling.style.display = "none";
         isSignUpValid1 = true;
         console.log('inside if3');
     }
 
-    // Check Email (sip2)
-    if (sip2.value === "") {
-        sip2.setAttribute("id", "errorBorder");
-        sip2.nextElementSibling.style.display = "block";
+    // toastBtn Email (signInInput2)
+    if (signInInput2.value === "") {
+        signInInput2.setAttribute("id", "errorBorder");
+        signInInput2.nextElementSibling.style.display = "block";
         event.preventDefault();
     } else {
         function isValidEmail(email) {
             var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             return emailPattern.test(email);
         }
-        if (isValidEmail(sip2.value)) {
-            sip2.setAttribute("id", "zero");
-            sip2.nextElementSibling.style.display = "none";
+        if (isValidEmail(signInInput2.value)) {
+            signInInput2.setAttribute("id", "zero");
+            signInInput2.nextElementSibling.style.display = "none";
             console.log('inside if1');
             isSignUpValid2 = true;
         } else {
-            sip2.setAttribute("id", "errorBorder");
-            sip2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address';
-            sip2.nextElementSibling.style.display = "block";
+            signInInput2.setAttribute("id", "errorBorder");
+            signInInput2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Invalid email address';
+            signInInput2.nextElementSibling.style.display = "block";
             event.preventDefault();
         }
     }
 
-    // Check Password (sip3)
-    if (sip3.value === "") {
-        sip3.setAttribute("id", "errorBorder");
-        sip3.nextElementSibling.style.display = "block";
+    // toastBtn Password (signInInput3)
+    if (signInInput3.value === "") {
+        signInInput3.setAttribute("id", "errorBorder");
+        signInInput3.nextElementSibling.style.display = "block";
         event.preventDefault();
-    } else if (sip3.value.length < 6) {
-        sip3.setAttribute("id", "errorBorder");
-        sip3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
-        sip3.nextElementSibling.style.display = "block";
+    } else if (signInInput3.value.length < 6) {
+        signInInput3.setAttribute("id", "errorBorder");
+        signInInput3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        signInInput3.nextElementSibling.style.display = "block";
         event.preventDefault();
     } else {
-        function checkPasswordStrength(password) {
+        function toastBtnPasswordStrength(password) {
             if (password.length < 6) {
                 return "Password must be at least 6 characters long.";
             }
@@ -382,92 +382,92 @@
             return "Strong password!";
         }
 
-        var paswdStatus = checkPasswordStrength(sip3.value);
+        var paswdStatus = toastBtnPasswordStrength(signInInput3.value);
 
         if (paswdStatus !== "Strong password!") {
-            sip3.setAttribute("id", "errorBorder");
-            sip3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;' + paswdStatus;
-            sip3.nextElementSibling.style.display = "block";
+            signInInput3.setAttribute("id", "errorBorder");
+            signInInput3.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;' + paswdStatus;
+            signInInput3.nextElementSibling.style.display = "block";
             event.preventDefault();
         } else {
-            sip3.setAttribute("id", "zero");
-            sip3.nextElementSibling.style.display = "none";
+            signInInput3.setAttribute("id", "zero");
+            signInInput3.nextElementSibling.style.display = "none";
             isSignUpValid3 = true;
             console.log('inside if2');
         }
     }
 
-    // Check Confirm Password (sip4)
-    if (sip4.value === "") {
-        sip4.setAttribute("id", "errorBorder");
-        sip4.nextElementSibling.style.display = "block";
+    // toastBtn Confirm Password (signInInput4)
+    if (signInInput4.value === "") {
+        signInInput4.setAttribute("id", "errorBorder");
+        signInInput4.nextElementSibling.style.display = "block";
         event.preventDefault();
-    } else if (sip4.value.length < 6) {
-        sip4.setAttribute("id", "errorBorder");
-        sip4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
-        sip4.nextElementSibling.style.display = "block";
+    } else if (signInInput4.value.length < 6) {
+        signInInput4.setAttribute("id", "errorBorder");
+        signInInput4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        signInInput4.nextElementSibling.style.display = "block";
         event.preventDefault();
-    } else if (sip3.value !== sip4.value) {
-        sip4.setAttribute("id", "errorBorder");
-        sip4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match';
-        sip4.nextElementSibling.style.display = "block";
+    } else if (signInInput3.value !== signInInput4.value) {
+        signInInput4.setAttribute("id", "errorBorder");
+        signInInput4.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Passwords do not match';
+        signInInput4.nextElementSibling.style.display = "block";
         event.preventDefault();
     } else {
-        sip4.setAttribute("id", "zero");
-        sip4.nextElementSibling.style.display = "none";
+        signInInput4.setAttribute("id", "zero");
+        signInInput4.nextElementSibling.style.display = "none";
 
         if (isSignUpValid1 && isSignUpValid2 && isSignUpValid3) {
             console.log('inside if4');
-            document.querySelector("#check2").click(); // Trigger the click event
+            document.querySelector("#toastBtn2").click(); // Trigger the click event
         }
         event.preventDefault();
     }
 });
 
-    var lip1 = document.querySelector('.lip1');
-    var lip2 = document.querySelector('.lip2');
+    var loginInput1 = document.querySelector('.loginInput1');
+    var loginInput2 = document.querySelector('.loginInput2');
     var lbtn = document.querySelector('.lbtn');
 
-    // console.log(sip1);
-    // console.log(sip2);
-    // console.log(sip3);
-    // console.log(sip4);
+    // console.log(signInInput1);
+    // console.log(signInInput2);
+    // console.log(signInInput3);
+    // console.log(signInInput4);
     let isValid = true;
 
 
     // lbtn.addEventListener('click', () => {
-    //     if (lip1.value == "") {
-    //         $(".lip1").attr("id", "errorBorder");
-    //         $(".lip1").next().show();
+    //     if (loginInput1.value == "") {
+    //         $(".loginInput1").attr("id", "errorBorder");
+    //         $(".loginInput1").next().show();
     //         isValid = false;
     //         event.preventDefault();
-    //     } else if (lip1.value.length < 3) {
-    //         $(".lip1").attr("id", "errorBorder");
-    //         $(".lip1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
-    //         $(".lip1").next().show();
+    //     } else if (loginInput1.value.length < 3) {
+    //         $(".loginInput1").attr("id", "errorBorder");
+    //         $(".loginInput1").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be atleast 3 characters');
+    //         $(".loginInput1").next().show();
     //         isValid = false;
     //         event.preventDefault();
     //     } else {
-    //         $(".lip1").attr("id", "zero");
-    //         $(".lip1").next().hide();
+    //         $(".loginInput1").attr("id", "zero");
+    //         $(".loginInput1").next().hide();
     //         isValid = true;
     //     }
 
-    //     if (lip2.value == "") {
-    //         $(".lip2").attr("id", "errorBorder");
-    //         $(".lip2").next().show();
+    //     if (loginInput2.value == "") {
+    //         $(".loginInput2").attr("id", "errorBorder");
+    //         $(".loginInput2").next().show();
     //         event.preventDefault();
-    //     } else if (lip2.value.length < 6) {
-    //         $(".lip2").attr("id", "errorBorder");
-    //         $(".lip2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
-    //         $(".lip2").next().show();
+    //     } else if (loginInput2.value.length < 6) {
+    //         $(".loginInput2").attr("id", "errorBorder");
+    //         $(".loginInput2").next().html('<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be atleast 6 characters');
+    //         $(".loginInput2").next().show();
     //         event.preventDefault();
     //     } else {
-    //         $(".lip2").attr("id", "zero");
-    //         $(".lip2").next().hide();
+    //         $(".loginInput2").attr("id", "zero");
+    //         $(".loginInput2").next().hide();
 
     //         if (isValid) {
-    //             $("#check").trigger("click");
+    //             $("#toastBtn").trigger("click");
     //         }
     //         event.preventDefault();
     //     }
@@ -476,48 +476,48 @@
     lbtn.addEventListener('click', function(event) {
     let isValid = true;
 
-    // Check Username (lip1)
-    if (lip1.value === "") {
-        lip1.setAttribute("id", "errorBorder");
-        lip1.nextElementSibling.style.display = "block";
+    // toastBtn Username (loginInput1)
+    if (loginInput1.value === "") {
+        loginInput1.setAttribute("id", "errorBorder");
+        loginInput1.nextElementSibling.style.display = "block";
         isValid = false;
         event.preventDefault();
-    } else if (lip1.value.length < 3) {
-        lip1.setAttribute("id", "errorBorder");
-        lip1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
-        lip1.nextElementSibling.style.display = "block";
+    } else if (loginInput1.value.length < 3) {
+        loginInput1.setAttribute("id", "errorBorder");
+        loginInput1.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Username should be at least 3 characters';
+        loginInput1.nextElementSibling.style.display = "block";
         isValid = false;
         event.preventDefault();
     } else {
-        lip1.setAttribute("id", "zero");
-        lip1.nextElementSibling.style.display = "none";
+        loginInput1.setAttribute("id", "zero");
+        loginInput1.nextElementSibling.style.display = "none";
         isValid = true;
     }
 
-    // Check Password (lip2)
-    if (lip2.value === "") {
-        lip2.setAttribute("id", "errorBorder");
-        lip2.nextElementSibling.style.display = "block";
+    // toastBtn Password (loginInput2)
+    if (loginInput2.value === "") {
+        loginInput2.setAttribute("id", "errorBorder");
+        loginInput2.nextElementSibling.style.display = "block";
         isValid = false;
         event.preventDefault();
-    } else if (lip2.value.length < 6) {
-        lip2.setAttribute("id", "errorBorder");
-        lip2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
-        lip2.nextElementSibling.style.display = "block";
+    } else if (loginInput2.value.length < 6) {
+        loginInput2.setAttribute("id", "errorBorder");
+        loginInput2.nextElementSibling.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>&nbsp;&nbsp;Password should be at least 6 characters';
+        loginInput2.nextElementSibling.style.display = "block";
         isValid = false;
         event.preventDefault();
     } else {
-        lip2.setAttribute("id", "zero");
-        lip2.nextElementSibling.style.display = "none";
+        loginInput2.setAttribute("id", "zero");
+        loginInput2.nextElementSibling.style.display = "none";
 
         if (isValid) {
-            document.querySelector("#check").click();
+            document.querySelector("#toastBtn").click();
         }
         event.preventDefault();
     }
 });
 
-    $("#check").click(function () {
+    $("#toastBtn").click(function () {
         $(".loginSuccess").show();
         $(".greenLine").animate({
             right: "100%"
@@ -527,7 +527,7 @@
         });
     });
 
-    $("#check2").click(function () {
+    $("#toastBtn2").click(function () {
         $(".singupSuccess").show();
         $(".blueLine").animate({
             right: "100%"
